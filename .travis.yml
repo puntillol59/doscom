@@ -1,0 +1,23 @@
+jobs:
+  include:
+   - os: linux
+     arch: amd64
+   - os: linux
+     arch: arm64
+   - os: linux
+     arch: ppc64le
+   - os: linux
+     arch: s390x
+   - os: linux
+     arch: arm64-graviton2
+     virt: lxd
+     group: edge   
+language: C
+install:
+  - sudo add-apt-repository ppa:tkchia/build-ia16 -y
+  - sudo apt-get update
+  - echo "${TRAVIS_BUILD_DIR}"
+  - sudo apt install gcc-ia16-elf nasm upx wget -y
+script:
+  - bash ci-build.sh
+  - bash ci-test.sh
