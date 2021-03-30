@@ -17,5 +17,5 @@ install:
   - echo "${TRAVIS_BUILD_DIR}"
   - sudo apt install gcc-ia16-elf nasm upx wget -y
 script:
-  - bash ci-build.sh
-  - bash ci-test.sh
+  - bash ci_build.sh
+  - bash ci_test.sh
