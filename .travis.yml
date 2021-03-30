@@ -2,16 +2,14 @@ jobs:
   include:
    - os: linux
      arch: amd64
-   - os: linux
-     arch: arm64
-   - os: linux
-     arch: ppc64le
-   - os: linux
-     arch: s390x
-   - os: linux
-     arch: arm64-graviton2
+     dist: bionic
      virt: lxd
-     group: edge   
+     group: edge
+   - os: linux
+     arch: amd64
+     dist: focal
+     virt: lxd
+     group: edge    
 language: C
 install:
   - sudo add-apt-repository ppa:tkchia/build-ia16 -y
